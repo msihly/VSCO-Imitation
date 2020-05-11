@@ -11,6 +11,7 @@
 * Added basic pagination functionality to **Feed** page
 * Added login functionality and automatic creation of authentication tokens
 * Added functions for registration, but not implemented due to VSCO restricting sign-ups to its mobile app
+* Added skeleton `index.php` for processing buildpack on Heroku
 * Imported and updated `Common` JavaScript module used in OneMark and my other projects
 
 ## Version 0.10 &nbsp;-&nbsp; (2020-05-05)
