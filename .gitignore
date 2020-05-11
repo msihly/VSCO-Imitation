@@ -1,0 +1,7 @@
+
+vendor/
+*/unused/
+*.log
+*.ai
+*.db
+*.code-workspace
