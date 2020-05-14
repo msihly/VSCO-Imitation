@@ -8,12 +8,12 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Feed | VSCO</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" type="image/ico" href="images/favicon.ico">
-	</head>
-	<body>
-	</body>
+    <head>
+        <title>VSCO</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/ico" href="images/favicon.ico">
+    </head>
+    <body>
+    </body>
 </html>

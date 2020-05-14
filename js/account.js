@@ -1,14 +1,18 @@
-import * as Cmn from "./modules/Cmn.js";
+import * as Cmn from "./modules/common.js";
 
 const eventListeners = [
     {
+        "id": "signout",
+        "eventType": "submit",
+        "function": logout
+    }, {
         "dataListener": "updateAccount",
         "eventType": "submit",
         "function": updateAccount
     }, {
-        "domObject": document,
+        "dataListener": "notImplemented",
         "eventType": "click",
-        "function": Cmn.closeMenus
+        "function": () => { event.preventDefault(); Cmn.toast("Feature not implemented", "warning"); }
     }
 ];
 
@@ -22,7 +26,7 @@ async function logout() {
     let response = await (await fetch("/php/logout.php")).json();
     if (response.Success) {
         Cmn.toast(response.Message, "success");
-        setTimeout(() => window.location.href = "/login.php", 1000);
+        setTimeout(() => window.location.href = "/feed", 300);
     } else {
         Cmn.toast(response.Message, "error");
     }
@@ -30,7 +34,7 @@ async function logout() {
 
 async function updateAccount() {
     event.preventDefault();
-    if (!Cmn.checkErrors([...this.elements])) { return Cmn.toast("Errors in form fields", "error"); }
+    //if (!Cmn.checkErrors([...this.elements])) { return Cmn.toast("Errors in form fields", "error"); }
 
     let formData = new FormData(this);
     formData.append("formType", this.dataset.formType);

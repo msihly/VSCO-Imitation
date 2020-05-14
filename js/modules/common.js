@@ -101,9 +101,9 @@ export function toast(message, type) {
     toast.innerHTML = message;
 
     switch (type) {
-        case "success": toast.classList.add("bg-blue"); break;
-        case "error": toast.classList.add("bg-red"); break;
-        case "warning": toast.classList.add("bg-orange"); break;
+        case "success": case "blue": toast.classList.add("bg-blue"); break;
+        case "error": case "red": toast.classList.add("bg-red"); break;
+        case "warning": case "yellow": case "orange": toast.classList.add("bg-orange"); break;
     }
 
 	CmnG.toasts.forEach(t => t.style.bottom = (parseFloat(t.style.bottom) || 0) + t.clientHeight + 8 + 'px');
@@ -113,7 +113,7 @@ export function toast(message, type) {
 	setTimeout(function() {
 		toast.remove();
 		CmnG.toasts.shift();
-    }, 5000);
+    }, 4900);
 }
 
 /******************************* FORM *******************************/

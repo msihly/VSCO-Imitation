@@ -54,6 +54,8 @@ WHERE       t.Selector = :selector;
 SELECT      u1.Username AS Author, u2.Username AS Sharer, p.PostURL, p.DateCreated AS PostDate, i.ImagePath, i.ImageSize, i.DateCreated AS ImageDate
 FROM        Follower AS f INNER JOIN Post AS p
                 ON f.UserID = p.SharerID
+            INNER JOIN Images AS i
+                ON p.ImageID = i.ImageID
             INNER JOIN User AS u1
                 ON p.AuthorID = u1.UserID
             INNER JOIN User AS u2
@@ -65,6 +67,8 @@ LIMIT       140;
 SELECT      u.Username AS Author, p.PostURL, p.DateCreated AS PostDate, i.ImagePath, i.ImageSize, i.DateCreated AS ImageDate
 FROM        Post AS p INNER JOIN User AS u
                 ON p.AuthorID = u.UserID
+            INNER JOIN Images AS i
+                ON p.ImageID = i.ImageID
 ORDER BY    p.DateCreated DESC
 LIMIT       140;
 

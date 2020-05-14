@@ -4,32 +4,50 @@ const eventListeners = [
     {
         "id": "loadPage",
         "eventType": "click",
-        "function": () => { loadPage(FeedG.curPage + 1); FeedG.curPage++; }
-    }, {
-        "dataListener": "modalClose",
-        "eventType": "mousedown",
-        "function": modalClose
+        "function": () => loadPage(FeedG.curPage + 1)
     }, {
         "dataListener": "notImplemented",
         "eventType": "click",
         "function": () => { event.preventDefault(); Cmn.toast("Feature not implemented", "warning"); }
-    }, {
-        "domObject": document,
-        "eventType": "click",
-        "function": Cmn.closeMenus
     }
 ];
 
 const FeedG = {
-    curPage: 1,
+    curPage: 0,
     posts: [],
+    postsContainer: "",
     postsPerPage: 14
 }
 
+const ImageObserver = new MutationObserver(mutations => {
+    mutations.forEach(m => {
+        try {
+            if (m.addedNodes.length > 0) {
+                let unloaded = [];
+                m.addedNodes.forEach(e => {
+                    let wrapper = e.querySelector(".MediaBgColorWrapper--withRatio"),
+                        img = wrapper.firstElementChild;
+                    (img.naturalWidth == 0 || img.naturalHeight == 0) ? unloaded.push(wrapper) : wrapper.style = `padding-top: ${100 / (img.naturalWidth / img.naturalHeight)}%`;
+                });
+                setTimeout(() => {
+                    unloaded.forEach(e => {
+                        let img = e.firstElementChild;
+                        e.style = `padding-top: ${100 / (img.naturalWidth / img.naturalHeight)}%`;
+                    });
+                }, 50);
+            }
+        } catch (err) {
+            console.error([err.message, m]);
+        }
+    });
+});
+
 window.addEventListener("DOMContentLoaded", async function() {
     Cmn.addListeners(eventListeners);
+    FeedG.postsContainer = document.getElementById("posts-container");
+    ImageObserver.observe(FeedG.postsContainer, { childList: true, subtree: true });
     FeedG.posts = await getPosts();
-    if(!checkEmpty(FeedG.posts)) { createPosts(FeedG.posts); }
+    if(!checkEmpty(FeedG.posts)) { loadPage(1); }
 });
 
 /******************************* MODAL *******************************/
@@ -40,11 +58,12 @@ function modalClose(del = false, modalID = null) {
 }
 
 function modalPost(post) {
-
+    Cmn.toast("Modals not implemented", "warning");
 }
 
 /******************************* POSTS *******************************/
 function checkEmpty(arr) {
+    if (arr == undefined) { return console.error("Undefined reference passed to 'checkEmpty(arr)' function"); }
     return arr.length < 1 ? true : false;
 }
 
@@ -65,7 +84,7 @@ function createPost(post) {
                             </div>
                         </a>
                         <figcaption class="MediaThumbnailCaption">
-                            <h6 class="MediaThumnailCaption-author truncate">
+                            <h6 class="MediaThumbnailCaption-author truncate">
                                 ${shareHtml}
                                 <a href="/${post.Author}">${post.Author}</a>
                             </h6>
@@ -73,7 +92,7 @@ function createPost(post) {
                     </figure>`;
 
     let frag = document.createRange().createContextualFragment(postHtml);
-    frag.querySelector(`#p${post.PostID}`).addEventListener("click", () => modalPost(post));
+    frag.querySelector(`#p${post.PostID}`).addEventListener("click", () => { event.preventDefault(); modalPost(post); });
 	return frag;
 }
 
@@ -93,6 +112,7 @@ async function getPosts() {
 function loadPage(page) {
     let end =  page * FeedG.postsPerPage,
         start = end - FeedG.postsPerPage,
-        displayedPosts = FeedG.posts.slice(start, end);
-    createPosts(FeedG.postsContainer, displayedPosts);
+        addedPosts = FeedG.posts.slice(start, end);
+    addedPosts.length > 0 ? createPosts(FeedG.postsContainer, addedPosts) : Cmn.toast("No more posts found", "blue");
+    FeedG.curPage = page;
 }

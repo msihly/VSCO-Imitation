@@ -40,7 +40,7 @@ try {
             }
         }
     } else {
-        echo json_encode(["Success" => false, "Message" => "Invalid form information / no attempt made to login"]);
+        echo json_encode(["Success" => false, "Message" => "Invalid form information"]);
     }
 } catch(PDOException $e) {
     logToFile("Error: " . $e->getMessage(), "e");

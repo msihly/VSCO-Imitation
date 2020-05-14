@@ -1,0 +1,394 @@
+/******************************* GENERAL *******************************/
+*, ::before, ::after, input[type="search"] {
+    box-sizing: inherit;
+}
+
+*:focus {
+    outline: none;
+}
+
+html {
+    display: block;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+html, body, div, span, input, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small,
+strong, sub, sup, var, b, i, hr, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
+figure, figcaption, hgroup, menu, footer, header, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: 'VSCO Gothic Book', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: #ae995a;
+    text-decoration: none;
+}
+
+a img {
+    border: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    line-height: 1.5;
+    margin: 5px 0 10px;
+}
+
+.pageWrapper, .page-error {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.mb20 {
+    margin-bottom: 1.25rem;
+}
+
+.mb30 {
+    margin-bottom: 1.875rem;
+}
+
+.mb50 {
+    margin-bottom: 3.125rem;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/******************************* HEADER *******************************/
+.global-header {
+    position: relative;
+    z-index: 1000;
+    height: 60px;
+    background: #fff;
+}
+
+.global-header nav {
+    width: 100%;
+    text-align: right;
+}
+
+.global-header * {
+    box-sizing: border-box;
+}
+
+.global-header nav ul {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 60px;
+    list-style: none;
+}
+
+.nav-item {
+    position: relative;
+    vertical-align: top;
+    height: 60px;
+    display: inline-block;
+    padding-left: 1px;
+    font-family: 'VSCO Gothic Book', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+    font-size: .875rem;
+}
+
+.nav-item a {
+    display: block;
+    color: #000;
+    padding: 0 15px;
+}
+
+.global-header .nav-signin {
+    min-width: 74px;
+    max-width: 40%;
+    margin-right: 16px;
+}
+
+a.nav-getAppBtn {
+    display: inline-block;
+    height: 2.5rem;
+    width: 7.5rem;
+    margin-right: 1.25rem;
+    padding: 0;
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+    font-family: 'VSCO Gothic Medium', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 2.5rem;
+    text-align: center;
+}
+
+a.nav-getAppBtn:hover, a.nav-getAppBtn:focus {
+    background-color: #000;
+    color: #fff;
+    opacity: 1;
+}
+
+.global-header .nav-icon {
+    min-width: 45px;
+    min-height: 60px;
+}
+
+.global-header .nav-search {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 0;
+    margin-left: 6%;
+}
+
+.global-header .nav-search a {
+    padding-left: 0;
+    background: url("../images/search-icon-black@2x.png") 0 50% no-repeat;
+    background-size: 1.25rem auto;
+}
+
+.ir {
+    overflow: hidden;
+    display: block;
+    border: 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    /* vertical-align: top; */
+    text-align: left;
+    text-indent: -999em;
+    direction: ltr;
+}
+
+/******************************* LOGIN FORM *******************************/
+.user-signin .pageBounds {
+    max-width: 340px;
+    margin: 0 auto 75px;
+    text-align: center;
+}
+
+.sign-in-box, .register-box, .consent, .forgot-password-box, .resetPasswordBox {
+    position: relative;
+}
+
+.sign-in-box, .resetPasswordBox, .register-box, .consent {
+    margin-top: 68px;
+}
+
+.user-signin .messageBar {
+    font-family: 'VSCO Gothic Book', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.user-account .messageBar, .form-user .messageBar {
+    margin: 0 !important;
+    padding: 20px 0 0;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+textarea, input {
+    font-family: 'VSCO Gothic Book', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+textarea, input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+    display: block;
+    width: 90%;
+    padding: 10px 5%;
+    border: 1px solid #999;
+    border-radius: 0;
+    background: #fff;
+    color: #000;
+    font-size: 16px;
+    font-size: 1rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.user-signin textarea, .user-signin input[type="text"], .user-signin input[type="password"], .user-signin input[type="email"] {
+    border: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.sign-in-box textarea, .sign-in-box input[type="text"], .sign-in-box input[type="password"], .sign-in-box input[type="email"], .sign-in-box select, .register-box textarea, .register-box input[type="text"],
+.register-box input[type="password"], .register-box input[type="email"], .register-box select, .consent textarea, .consent input[type="text"], .consent input[type="password"], .consent input[type="email"],
+.consent select, .forgot-password-box textarea, .forgot-password-box input[type="text"], .forgot-password-box input[type="password"], .forgot-password-box input[type="email"], .forgot-password-box select,
+.resetPasswordBox textarea, .resetPasswordBox input[type="text"], .resetPasswordBox input[type="password"], .resetPasswordBox input[type="email"], .resetPasswordBox select {
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    border-color: #ddd;
+    font-family: 'VSCO Gothic Book', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+    font-size: .875rem;
+}
+
+.sign-in-box input:-webkit-autofill, .register-box input:-webkit-autofill, .consent input:-webkit-autofill, .forgot-password-box input:-webkit-autofill, .resetPasswordBox input:-webkit-autofill {
+    box-shadow: 0 0 0 1000px white inset;
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+form fieldset {
+    background: none;
+}
+
+form fieldset label {
+    padding: 8px;
+}
+
+.user-account label {
+    margin-left: 10px;
+    color: #888888;
+    font-family: 'VSCO Gothic Book', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 11px;
+    font-size: .6875rem;
+}
+
+.label--inline.label--inline {
+    float: left;
+    margin-left: 0;
+    padding: 0;
+    font-size: 12px;
+    font-size: .75rem;
+    text-align: left;
+}
+
+.sign-in-box .link, .register-box .link, .consent .link, .forgot-password-box .link, .resetPasswordBox .link {
+    padding: 0;
+    color: #888;
+    font-family: 'VSCO Gothic Medium', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 11px;
+    font-size: .6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+    cursor: pointer;
+}
+
+.sign-in-box .accountLink {
+    position: relative;
+    top: 2px;
+}
+
+#loginButton, #registerSubmit, .consent-button {
+    min-width: 113px;
+    height: 48px;
+    border: 0;
+    background: #000;
+    color: #fff;
+}
+
+.consent-button, #loginButton, #forgotPasswordBtn, #registerSubmit, #resetPasswordBtn {
+    min-width: 113px;
+    height: 48px;
+    border: 0;
+}
+
+#forgotPasswordBtn, #loginButton, #registerSubmit, .consent-button, #resetPasswordBtn {
+    background: #000;
+    color: #fff;
+}
+
+.sign-in-box #loginButton {
+    width: 113px;
+}
+
+.sign-in-box .forgotpw {
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+}
+
+/******************************* MEDIA QUERIES *******************************/
+@media (min-height: 52.5em) and (min-width: 48em) {
+    .user-signin .sign-in-box, .user-signin .register-box, .user-signin .consent, .user-signin .forgot-password-box, .user-signin .resetPasswordBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        max-width: 340px;
+    }
+}
+
+@media (min-width: 48em) {
+    .global-header {
+        height: 84px;
+    }
+
+    .global-header nav ul {
+        line-height: 84px;
+    }
+
+    .nav-item {
+        height: 84px;
+    }
+
+    .global-header .nav-search {
+        margin-left: 1.875rem;
+    }
+
+    .sign-in-box, .resetPasswordBox, .register-box, .consent {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 62.5em) {
+    .global-header .nav-signin {
+        max-width: 24%;
+    }
+}
+
+@media (max-width: 68.75em) {
+    .global-header .nav-signin {
+        max-width: 33%;
+    }
+}
+
+@media (max-width: 75em) {
+    .global-header .nav-signin {
+        max-width: 38%;
+    }
+}

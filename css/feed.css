@@ -1,0 +1,627 @@
+/******************************* GENERAL *******************************/
+*, ::before, ::after, input[type="search"] {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+    font-family: sans-serif;
+    text-size-adjust: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: "VSCO Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    margin: 0px;
+    padding: 0px;
+    background: rgb(255, 255, 255);
+    transition: background 0.2s ease 0s;
+}
+
+figure {
+    margin: 1em 40px;
+}
+
+blockquote, dl, dd, h1, h2, h3, h4, h5, h6, figure, pre {
+    margin: 0px;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0px;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+}
+
+small {
+    font-size: 80%;
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.page-wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    flex: 1 0 auto;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.relative {
+    position: relative;
+}
+
+.clearfix::before, .clearfix::after {
+    content: " ";
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.sm-show, .md-show, .lg-show {
+    display: none;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+    background-color: transparent;
+}
+
+ol, ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0px;
+}
+
+button {
+    padding: 0px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    background: transparent;
+    overflow: visible;
+}
+
+button, select {
+    text-transform: none;
+}
+
+.btn {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    color: inherit;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    -webkit-appearance: none;
+    margin: 0px;
+    padding: 6px 12px;
+    outline: 0px;
+    background: transparent;
+    font: inherit;
+    text-decoration: none;
+}
+
+.btn--charcoal-dark {
+    color: rgb(255, 255, 255);
+    background: rgb(34, 34, 34);
+}
+
+/******************************* HEADER *******************************/
+.Header {
+    padding-right: 6%;
+    padding-left: 6%;
+}
+
+.Header-mobileNavBurgerBtn {
+    float: right;
+    width: 3.75rem;
+    height: 3.75rem;
+    background-image: url("../images/icon_hamburger@2x.png");
+    background-size: 1.125rem;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    padding: 0px;
+    outline: 0px;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+}
+
+.Header-followingBtn {
+    float: left;
+    width: 2.8rem;
+    height: 60px;
+    margin-left: 7px;
+    padding-left: 0.9375rem;
+    background: url("../images/follow-icon.svg") 0px 50% / 20px no-repeat;
+}
+
+.Header-vscoLink {
+    display: block;
+    width: 4rem;
+    color: rgb(0, 0, 0);
+    font-family: "VSCO Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 3.75rem;
+    text-align: center;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    margin: 0px auto;
+    text-decoration: none;
+}
+
+.ir {
+    display: block;
+    text-indent: 200%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.Nav {
+    position: fixed;
+    top: 0px;
+    right: -22.5rem;
+    bottom: 0px;
+    z-index: 2;
+    width: 85%;
+    max-width: 22.5rem;
+    opacity: 0;
+    background-color: rgb(246, 246, 246);
+    text-size-adjust: none;
+    text-align: left;
+    padding: 4.5625rem 20px 40px 40px;
+    transition: opacity 0.3s ease 0s;
+}
+
+.NavSearchButton {
+    float: left;
+    width: 32px;
+    height: 60px;
+    padding-right: 0.9375rem;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    outline: 0px;
+    background: url("../images/search-icon-black@2x.png") 0px 50% / 20px no-repeat;
+}
+
+.Nav-getApp-container {
+    float: right;
+    height: 5rem;
+    padding-top: 22px;
+}
+
+.Nav-getApp {
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    margin-left: 16px;
+    margin-right: 20px;
+    color: rgb(255, 255, 255);
+    font-family: "VSCO Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 40px;
+    padding: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-image: initial;
+    border-radius: 2px;
+    background: rgb(0, 0, 0);
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.Nav-settings {
+    width: 1rem;
+    height: 1rem;
+    background-image: url("../images/settings_icon.svg");
+    background-size: 0.9375rem;
+    background-repeat: no-repeat;
+    background-position: 50% 2rem;
+}
+
+.Nav-upload {
+    width: 1rem;
+    height: 1rem;
+    background-image: url("../images/upload_icon.svg");
+    background-size: 0.9375rem;
+    background-repeat: no-repeat;
+    background-position: 50% 2rem;
+}
+
+.Nav-settings--mobileLinkWrapper {
+    position: absolute;
+    top: 7px;
+    opacity: 0.5;
+    background-size: 21px;
+}
+
+.Nav-settings--mobileLink {
+    width: 48px;
+    height: 48px;
+    background-size: 21px;
+    background-position: 0px 50%;
+}
+
+.Nav-primaryPages {
+    font-size: 18px;
+}
+
+.Nav-primaryPages .Nav-text > a, .Nav-secondaryPages .Nav-text > a {
+    display: block;
+    padding: 12px 0px;
+}
+
+.Nav-text > a {
+    color: rgb(0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+}
+
+.Nav-text > a.active {
+    font-family: "VSCO Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 700;
+}
+
+.Nav-secondaryPages ul:first-of-type {
+    margin-right: 4.6875rem;
+}
+
+.Nav-secondaryPages ul {
+    vertical-align: top;
+    display: inline-block;
+    font-size: 12px;
+}
+
+/******************************* FEED *******************************/
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    padding: 0px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+}
+
+.SignedOutBanner {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    max-width: 1140px;
+    text-align: center;
+    flex-flow: row wrap;
+    margin: 5vw auto 30px;
+}
+
+.SignedOutBanner-title {
+    color: rgb(34, 34, 34);
+    font-size: 24px;
+    font-family: "VSCO Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.SignedOutBanner-cta {
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 38px;
+}
+
+.SignedOutBanner-btn {
+    margin-right: 20px;
+    font-size: 12px;
+    padding: 12px 20px;
+}
+
+.SignedOutBanner-btn:last-of-type {
+    margin-right: 0px;
+}
+
+.css-lnnxvk {
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Feed {
+    max-width: 1440px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid {
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: 0px;
+    padding: 0px;
+}
+
+.grid--withGutter, .Feed .grid--withGutter {
+    margin-left: calc(-30px);
+    margin-right: calc(-30px);
+}
+
+/******************************* POSTS *******************************/
+.Feed .grid--withGutter .grid-item, .grid--withGutter > .grid-item {
+    padding-left: calc(30px);
+    padding-right: calc(30px);
+}
+
+.grid-item {
+    box-sizing: inherit;
+}
+
+.Feed .grid-item {
+    align-self: flex-end;
+    flex-basis: auto;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.MediaThumbnail {
+    width: 100%;
+    font-size: 14px;
+    font-family: "VSCO Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.MediaThumbnail a {
+    outline: 0px;
+}
+
+.MediaBgColorWrapper--withRatio {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    transition: background-color 0.2s ease 0s;
+}
+
+.MediaBgColorWrapper--withRatio > img, .MediaBgColorWrapper--withRatio video {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    transform: translateZ(0px);
+    will-change: transform, opacity;
+}
+
+.MediaThumbnail img, .MediaThumbnail video {
+    width: 100%;
+}
+
+.css-6dp941 {
+    opacity: 1;
+    transition: opacity 0.2s ease 0s;
+}
+
+.disableSave-mobile {
+    user-select: none;
+}
+
+.MediaThumbnailCaption {
+    margin-top: 12px;
+}
+
+.MediaThumbnailCaption-author {
+    color: rgb(136, 136, 136);
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    text-align: left;
+}
+
+.truncate {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.css-1l8iuw5 {
+    height: var(--height);
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: rgb(0, 0, 0);
+    opacity: 1;
+    color: rgb(255, 255, 255);
+    line-height: var(--height);
+    --height: 61px;
+    display: block;
+    width: 100%;
+    max-width: 375px;
+    font-size: 12px;
+    font-family: "VSCO Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-radius: 2px;
+    text-decoration: none;
+    margin: 0px auto 5rem;
+}
+
+.css-uk6cul {
+    vertical-align: middle;
+}
+
+/******************************* MEDIA QUERIES *******************************/
+@media (min-width: 26em) {
+    .Feed .grid-item {
+        width: 50%;
+        margin-bottom: 60px;
+    }
+
+    .MediaThumbnail img, .MediaThumbnail video {
+        width: auto;
+    }
+
+    .Feed .MediaThumbnailCaption {
+        height: 60px;
+    }
+}
+
+@media (min-width: 30em) {
+    .Header-vscoLink {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 48em) {
+    .Header {
+        padding-right: 0px;
+        padding-left: 1.875rem;
+    }
+
+    .Header-followingBtn {
+        height: 84px;
+        margin-right: 10px;
+    }
+
+    .md-hide {
+        display: none;
+    }
+
+    .md-show {
+        display: block;
+    }
+
+    .NavSearchButton {
+        height: 84px;
+    }
+
+    .Nav {
+        position: relative;
+        right: 0px;
+        float: right;
+        width: initial;
+        max-width: none;
+        opacity: 1;
+        background-color: transparent;
+        z-index: auto;
+        padding: 0px;
+    }
+
+    .Nav-upload, .Nav-settings {
+        width: 3.0625rem;
+        padding: 0px 0.9375rem;
+    }
+
+    .Nav-loggedInOptions, .Nav-upload, .Nav-settings {
+        float: right;
+    }
+
+    .Nav-primaryPages {
+        float: right;
+        font-size: 0.875rem;
+    }
+
+    .Nav-primaryPages li {
+        display: inline-block;
+    }
+
+    .Nav-primaryPages .Nav-text > a, .Nav-secondaryPages .Nav-text > a {
+        line-height: 5.25rem;
+        padding: 0px 0.9375rem;
+    }
+
+    .Nav-text > a, .Nav-loggedInOptions > a {
+        height: 5.25rem;
+    }
+
+    .Nav-loggedInOptions, .Nav-upload, .Nav-settings {
+        float: right;
+    }
+
+    .Nav-upload, .Nav-settings {
+        width: 3.0625rem;
+        padding: 0px 0.9375rem;
+    }
+
+    .SignedOutBanner {
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        min-height: 128px;
+        margin-top: 0px;
+        margin-bottom: 60px;
+        text-align: left;
+        padding: 0px 5.8%;
+    }
+
+    .SignedOutBanner-title {
+        width: auto;
+        font-size: 30px;
+        flex: 2 1 0%;
+    }
+
+    .SignedOutBanner-cta {
+        width: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        text-align: right;
+        flex: 1 0 100px;
+    }
+
+    .Feed .grid-item {
+        width: 300px;
+    }
+}

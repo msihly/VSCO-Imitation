@@ -183,9 +183,11 @@ function getFeedPosts($userID = null) {
     GLOBAL $conn;
 
     if (!is_null($userID)) {
-        $query = "SELECT      u1.Username AS Author, u2.Username AS Sharer, p.PostURL, p.DateCreated AS PostDate, i.ImagePath, i.ImageSize, i.DateCreated AS ImageDate
+        $query = "SELECT      u1.Username AS Author, u2.Username AS Sharer, p.PostID, p.PostURL, p.DateCreated AS PostDate, i.ImagePath, i.ImageSize, i.DateCreated AS ImageDate
                   FROM        Follower AS f INNER JOIN Post AS p
                                   ON f.UserID = p.SharerID
+                              INNER JOIN Images AS i
+                                  ON p.ImageID = i.ImageID
                               INNER JOIN User AS u1
                                   ON p.AuthorID = u1.UserID
                               INNER JOIN User AS u2
@@ -194,9 +196,11 @@ function getFeedPosts($userID = null) {
                   ORDER BY    p.DateCreated DESC
                   LIMIT       140;";
     } else {
-        $query = "SELECT      u.Username AS Author, p.PostURL, p.DateCreated AS PostDate, i.ImagePath, i.ImageSize, i.DateCreated AS ImageDate
+        $query = "SELECT      u.Username AS Author, p.PostID, p.PostURL, p.DateCreated AS PostDate, i.ImagePath, i.ImageSize, i.DateCreated AS ImageDate
                   FROM        Post AS p INNER JOIN User AS u
                                   ON p.AuthorID = u.UserID
+                              INNER JOIN Images AS i
+                                  ON p.ImageID = i.ImageID
                   ORDER BY    p.DateCreated DESC
                   LIMIT       140;";
     }
@@ -211,7 +215,7 @@ function getFeedPosts($userID = null) {
 
 function getPost($postID) {
     GLOBAL $conn;
-    $query = "SELECT      u.Username, p.DateCreated AS PostDate, i.ImagePath, i.ImageSize, i.DateCreated AS ImageDate
+    $query = "SELECT      u.Username, p.PostID, p.DateCreated AS PostDate, i.ImagePath, i.ImageSize, i.DateCreated AS ImageDate
               FROM        Post AS p INNER JOIN Images AS i
                               ON p.ImageID = i.ImageID
                           INNER JOIN User AS u

@@ -1,0 +1,459 @@
+/********************* VARIABLES *********************/
+:root {
+    --black-med: rgb(30, 30, 30);
+    --blue-light-1: rgb(0, 140, 225);
+    --blue-light-2: rgb(0, 115, 190);
+    --blue-med: rgb(20, 90, 170);
+    --green-light: rgb(70, 190, 70);
+    --green-med: rgb(10, 130, 10);
+    --grey-light: rgb(200, 200, 200);
+    --grey-med: #999;
+    --grey-dark: #666;
+    --orange-light: rgb(210, 130, 0);
+    --orange-med: rgb(200, 110, 0);
+    --orange-dark: rgb(200, 75, 0);
+    --purple-dark: rgb(90, 15, 90);
+    --red-light: rgb(205, 70, 70);
+    --red-med: rgb(185, 50, 50);
+    --red-med-2: rgb(160, 15, 15);
+    --red-dark: rgb(130, 10, 10);
+    --white-light: #dfdfdf;
+    --white-med: #E8E8E8;
+    --yellow: rgb(215, 190, 0);
+}
+
+/********************* GENERAL *********************/
+html, article, aside, canvas, details, figure, figure img, figcaption, hgroup, footer, header, main, menu, nav, section, summary, audio, video {
+    display: block;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+html, body, div, span, input, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small,
+strong, sub, sup, var, b, i, hr, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
+figure, figcaption, hgroup, menu, footer, header, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: 'VSCO Gothic Book', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.pageWrapper, .page-error {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.mt20 {
+    margin-top: 1.25rem;
+}
+
+.mb20 {
+    margin-bottom: 1.25rem;
+}
+
+.mb30 {
+    margin-bottom: 1.875rem;
+}
+
+.mb50 {
+    margin-bottom: 3.125rem;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.container_12:before, .hero:before, .payment_information:before, .clearfix:before, .group:before, .container_12:after, .hero:after, .payment_information:after, .clearfix:after, .group:after {
+    content: " ";
+    display: table;
+}
+
+.container_12:after, .hero:after, .payment_information:after, .clearfix:after, .group:after {
+    clear: both;
+}
+
+.hide {
+    display: none !important;
+}
+
+/******************************* HEADER *******************************/
+.global-header {
+    position: relative;
+    z-index: 1000;
+    height: 60px;
+    background: #fff;
+}
+
+.global-header nav {
+    width: 100%;
+    text-align: right;
+}
+
+.global-header * {
+    box-sizing: border-box;
+}
+
+.global-header nav ul {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 60px;
+    list-style: none;
+}
+
+.nav-item {
+    position: relative;
+    vertical-align: top;
+    height: 60px;
+    display: inline-block;
+    padding-left: 1px;
+    font-family: 'VSCO Gothic Book', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+    font-size: .875rem;
+}
+
+.nav-item a {
+    display: block;
+    color: #000;
+    padding: 0 15px;
+}
+
+.global-header .nav-signin {
+    min-width: 74px;
+    max-width: 40%;
+    margin-right: 16px;
+}
+
+a.nav-getAppBtn {
+    display: inline-block;
+    height: 2.5rem;
+    width: 7.5rem;
+    margin-right: 1.25rem;
+    padding: 0;
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+    font-family: 'VSCO Gothic Medium', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 2.5rem;
+    text-align: center;
+}
+
+a.nav-getAppBtn:hover, a.nav-getAppBtn:focus {
+    background-color: #000;
+    color: #fff;
+    opacity: 1;
+}
+
+.global-header .nav-icon {
+    min-width: 45px;
+    min-height: 60px;
+}
+
+.global-header .nav-search {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 0;
+    margin-left: 6%;
+}
+
+.global-header .nav-search a {
+    padding-left: 0;
+    background: url("../images/search-icon-black@2x.png") 0 50% no-repeat;
+    background-size: 1.25rem auto;
+}
+
+.ir {
+    overflow: hidden;
+    display: block;
+    border: 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    /* vertical-align: top; */
+    text-align: left;
+    text-indent: -999em;
+    direction: ltr;
+}
+
+/******************************* FOOTER *******************************/
+.Footer {
+    color: rgb(255, 255, 255);
+    font-family: "VSCO Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    padding: 60px 0px;
+    background: rgb(0, 0, 0);
+}
+
+.Footer-nav {
+    display: none;
+}
+
+.Footer-nav-section {
+    list-style: none;
+}
+
+.Footer-nav > li:not(:last-child) {
+    margin-right: 40px;
+}
+
+.Footer-nav > li {
+    vertical-align: top;
+    display: inline-block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 40px;
+    line-height: 1.18;
+    text-align: left;
+}
+
+.Footer-nav-section-header {
+    margin-bottom: 6px;
+    font-family: "VSCO Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 700;
+}
+
+.Footer-nav a {
+    color: #fff;
+    line-height: 1.8;
+    text-decoration: none;
+}
+
+.Footer-copyright {
+    display: block;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+/********************* FORM *********************/
+.container_12 {
+    width: 88%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container_12:before, .hero:before, .payment_information:before, .clearfix:before, .group:before, .container_12:after, .hero:after, .payment_information:after, .clearfix:after, .group:after {
+    content: " ";
+    display: table;
+}
+
+.container_12:after, .hero:after, .payment_information:after, .clearfix:after, .group:after {
+    clear: both;
+}
+
+.pageBounds, .page-error-container {
+    -ms-flex: 1;
+    flex: 1;
+    width: 100%;
+}
+
+.ta-center {
+    text-align: center !important;
+}
+
+.messageBar {
+    display: none;
+    padding: 20px;
+    margin: 10px 0;
+    font-size: 13px;
+    font-size: .8125rem;
+}
+
+.message-bar {
+    min-height: 20px;
+    margin: 28px 0 0 !important;
+}
+
+.user-signin .message-bar {
+    min-height: 0;
+    margin-bottom: 25px !important;
+}
+
+.message:empty, .user-account .messageBar:empty, .form-user .messageBar:empty {
+    display: none;
+}
+
+.message, .user-account .messageBar, .form-user .messageBar {
+    display: block;
+    margin-bottom: 20px;
+    font-family: 'VSCO Gothic Book', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 12px;
+    font-size: .75rem;
+}
+
+.messageBar.error {
+    color: #ff3401;
+}
+
+.user-signin .messageBar.error {
+    color: #FF3401;
+}
+
+.messageBar.info {
+    color: #ae995a;
+}
+
+/********************* TOAST NOTIFICATION / INLINE MESSAGES *********************/
+.toast {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 12px 16px;
+    margin: 0 0 16px 16px;
+    min-width: 10em;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #333;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.inline-message {
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    width: fit-content;
+    color: #fff;
+    background-color: #333;
+    box-sizing: border-box;
+    border-radius: 3px;
+    overflow: auto;
+    text-overflow: clip;
+    font-weight: 400;
+    animation: fade-in 1s forwards;
+}
+
+@keyframes fade-in {
+    0%      {opacity: 0;}
+    100%    {opacity: 1;}
+}
+
+.bg-green {
+    background-color: var(--green-light);
+}
+
+.bg-blue {
+    background-color: var(--blue-med);
+}
+
+.bg-red {
+    background-color: var(--red-med);
+}
+
+.bg-orange {
+    background-color: var(--orange-light);
+}
+
+.bg-yellow {
+    background-color: var(--yellow);
+}
+
+.fade-in-out {
+    animation: fade-in-out 5s;
+}
+
+@keyframes fade-in-out {
+    0%          {transform: translateY(30px); opacity: 0;}
+    10%, 90%    {transform: translateY(0); opacity: 1;}
+    100%        {transform: translateX(-100px); opacity: 0;}
+}
+
+/******************************* MEDIA QUERIES *******************************/
+@media (min-width: 48em) {
+    .global-header {
+        height: 84px;
+    }
+
+    .global-header nav ul {
+        line-height: 84px;
+    }
+
+    .nav-item {
+        height: 84px;
+    }
+
+    .global-header .nav-search {
+        margin-left: 1.875rem;
+    }
+
+    .Footer-nav {
+        display: block;
+    }
+
+    .Footer-copyright {
+        margin-top: 60px;
+    }
+}
+
+@media (min-width: 75em) {
+    .Footer-nav {
+        float: left;
+        margin-top: 0px;
+        margin-right: 5px;
+    }
+
+    .Footer-nav > li:not(:last-child) {
+        margin-right: 60px;
+    }
+
+    .Footer-nav > li {
+        margin-left: 60px;
+    }
+
+    .Footer-copyright {
+        float: right;
+        margin: 0px 60px 0px 5px;
+    }
+}
+
+@media (max-width: 62.5em) {
+    .global-header .nav-signin {
+        max-width: 24%;
+    }
+}
+
+@media (max-width: 68.75em) {
+    .global-header .nav-signin {
+        max-width: 33%;
+    }
+}
+
+@media (max-width: 75em) {
+    .global-header .nav-signin {
+        max-width: 38%;
+    }
+}
