@@ -24,7 +24,7 @@
                     <header role="banner" class="Header clearfix">
                         <button class="Header-mobileNavBurgerBtn md-hide btn" type="button"></button>
                         <a data-listener="notImplemented" class="NavSearchButton ir" title="Search" href="/search">Search</a>
-                        <?php if (isset($_SESSION["uid"])) { echo "<a class=\"Header-followingBtn ir\" title=\"Following\" href=\"/following\">Following</a>"; } ?>
+                        <?php if (isset($_SESSION["uid"])) { echo "<a data-listener=\"notImplemented\" class=\"Header-followingBtn ir\" title=\"Following\" href=\"/following\">Following</a>"; } ?>
                         <a class="Header-vscoLink md-hide" href="/">VSCO</a>
                         <nav class="Nav clearfix null null" role="navigation">
                             <?php
