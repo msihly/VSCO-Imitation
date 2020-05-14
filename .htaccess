@@ -2,7 +2,18 @@ Options -Indexes +FollowSymlinks
 
 RewriteEngine On
 RewriteBase /
+
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*?)/?$ /$1.php [NC,END]
-RewriteCond %{REQUEST_METHOD} !POST
-RewriteRule ^(.+)\.php$ /$1 [R,L]
+
+RewriteCond %{REQUEST_METHOD} !=POST
+RewriteRule ^(.+)\.php$ /$1 [L]
+
+# RewriteCond %{THE_REQUEST} ^GET\ /[^?\s]+\.php
+# RewriteRule (.+?)\.php$ /$1 [L,R=302,NC]
+
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^([^.]+?)/?$ $1.php [NC,L]
+
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
