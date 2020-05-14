@@ -4,6 +4,10 @@
 ---
 # Changelog
 *This changelog is not comprehensive and does not cover all or most changes. Use the GitHub commit history to view details*
+## Version 0.31 &nbsp;-&nbsp; (2020-05-13)
+* Fixed mixed-content error thrown on https caused by improper redirection in `.htaccess`
+* Fixed `MutationObserver` functionality in `feed.js`
+
 ## Version 0.30 &nbsp;-&nbsp; (2020-05-13)
 * `.htaccess` root file rewritten to mask URLs using VSCO's scheme
 * Added `feed.php`, `footer.php`, `user/account.php`, and `user/login.php` copying the relevant HTML structures from the respective VSCO pages

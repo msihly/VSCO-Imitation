@@ -26,7 +26,7 @@ async function login() {
         response = await (await fetch("/php/login.php", {method: "POST", body: formData})).json();
     if (response.Success) {
         Cmn.toast(response.Message, "success");
-        setTimeout(() => window.location.href = "/feed.php", 300);
+        setTimeout(() => window.location.href = "/feed", 300);
     } else {
         Cmn.toast(response.Message, "error");
     }

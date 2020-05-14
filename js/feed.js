@@ -23,18 +23,11 @@ const ImageObserver = new MutationObserver(mutations => {
     mutations.forEach(m => {
         try {
             if (m.addedNodes.length > 0) {
-                let unloaded = [];
                 m.addedNodes.forEach(e => {
                     let wrapper = e.querySelector(".MediaBgColorWrapper--withRatio"),
                         img = wrapper.firstElementChild;
-                    (img.naturalWidth == 0 || img.naturalHeight == 0) ? unloaded.push(wrapper) : wrapper.style = `padding-top: ${100 / (img.naturalWidth / img.naturalHeight)}%`;
+                    img.addEventListener("load", () => wrapper.style = `padding-top: ${100 / (img.naturalWidth / img.naturalHeight)}%`);
                 });
-                setTimeout(() => {
-                    unloaded.forEach(e => {
-                        let img = e.firstElementChild;
-                        e.style = `padding-top: ${100 / (img.naturalWidth / img.naturalHeight)}%`;
-                    });
-                }, 50);
             }
         } catch (err) {
             console.error([err.message, m]);
