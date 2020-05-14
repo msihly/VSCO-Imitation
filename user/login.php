@@ -1,10 +1,12 @@
 <?php
     session_start();
-    if (!isset($_SESSION["uid"]) && isset($_COOKIE["authToken"])) {
+    if (isset ($_SESSION["uid"])) {
+        header("Location: /feed");
+    } else if (isset($_COOKIE["authToken"])) {
         include_once("php/restricted/db-functions.php");
         $userID = validateToken($_COOKIE["authToken"]);
         if ($userID === false) { setcookie("authToken", "", 1); }
-        else { $_SESSION["uid"] = $userID; header("Location: /feed.php"); }
+        else { $_SESSION["uid"] = $userID; header("Location: /feed"); }
     }
 ?>
 <!DOCTYPE html>

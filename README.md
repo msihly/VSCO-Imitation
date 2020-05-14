@@ -4,6 +4,10 @@
 ---
 # Changelog
 *This changelog is not comprehensive and does not cover all or most changes. Use the GitHub commit history to view details*
+## Version 0.32 &nbsp;-&nbsp; (2020-05-13)
+* Fixed login page not redirecting properly when already logged in
+* Changed default page to `feed.php` as the `index.php` file (replicating the VSCO homepage) is no longer being implemented
+
 ## Version 0.31 &nbsp;-&nbsp; (2020-05-13)
 * Fixed mixed-content error thrown on https caused by improper redirection in `.htaccess`
 * Fixed `MutationObserver` functionality in `feed.js`

@@ -1,5 +1,7 @@
 Options -Indexes +FollowSymlinks
 
+DirectoryIndex feed.php
+
 RewriteEngine On
 RewriteBase /
 
