@@ -22,7 +22,7 @@
     * Removed modal functionality
     * Updated `loadPage(...)` function to handle quasi-infinite pagination
         * Now calls `createPosts(...)` and is used for page initialization
-    * Added a `MutationObserver` to observe the post feed and modify image wrapper elements to use a `padding-top` value of `100 / (width / height)` as per VSCO's image sizing algorithim
+    * Added a `MutationObserver` to observe the post feed and modify image wrapper elements to use a `padding-top` value of `100 / (width / height)` as per VSCO's image sizing algorithm
 * `js/login.js` :
     * Removed usage of `Cmn.errorCheck()` and `Cmn.insertInlineMessage(...)`
     * Reduced login redirect delay from 500ms to 300ms
